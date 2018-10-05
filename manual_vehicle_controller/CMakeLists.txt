@@ -46,6 +46,10 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
+add_executable(manual_vehicle_controller_node src/manual_vehicle_controller_node.cpp src/manual_vehicle_controller.cpp)
+add_dependencies(manual_vehicle_controller_node vehicle_controller_msgs_generate_messages_cpp)
+target_link_libraries(manual_vehicle_controller_node ${catkin_LIBRARIES})
+
 #############
 ## Install ##
 #############
