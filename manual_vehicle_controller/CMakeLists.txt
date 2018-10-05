@@ -53,6 +53,10 @@ target_link_libraries(manual_vehicle_controller_node ${catkin_LIBRARIES})
 #############
 ## Install ##
 #############
+install(TARGETS manual_vehicle_controller_node
+RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
 install(DIRECTORY include/manual_vehicle_controller/
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
 )
@@ -61,3 +65,11 @@ foreach(dir launch)
   install(DIRECTORY ${dir}/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
 endforeach(dir)
+
+#############
+## Testing ##
+#############
+if (CATKIN_ENABLE_TESTING)
+  find_package(roslaunch REQUIRED)
+  roslaunch_add_file_check(launch)
+endif()

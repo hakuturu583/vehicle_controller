@@ -1,0 +1,29 @@
+steer:
+  enable: true
+  axes: 0
+  min_angle: -1.57
+  max_angle: 1.57
+accel:
+  enable: true
+  axes: 4
+brake:
+  enable: true
+  axes: 5
+handle_brake:
+  enable: false
+left_winker_switch:
+  enable: true
+  buttons: 13
+right_winker_switch:
+  enable: true
+  buttons: 14
+gear:
+  enable: true
+  enable_rear: true
+  enable_parking: false
+  enable_neutral: true
+  enable_drive: true
+  up:
+    axes: 7
+  down:
+    axes: 6
