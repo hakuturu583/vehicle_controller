@@ -2,4 +2,9 @@
 <launch>
     <node pkg="joy" type="joy_node" name="joy_node" args="" output="screen" respawn="true">
     </node>
+
+    <node pkg="manual_vehicle_controller" type="manual_vehicle_controller_node" name="manual_vehicle_controller_node" args="" output="screen" respawn="true">
+        <rosparam file="$(find manual_vehicle_controller)/config/pxn_v3iib.yaml" command="load"/>
+        <rosparam file="$(find manual_vehicle_controller)/config/config.yaml" command="load"/>
+    </node>
 </launch>
